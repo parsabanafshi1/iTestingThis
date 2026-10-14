@@ -22,7 +22,6 @@ RUN pip install -r requirements.txt
 COPY . .
 RUN python -m py_compile main.py
 
-# SpiderPanel panel port is fixed at 8080.
 EXPOSE 8080
 EXPOSE 443
 
