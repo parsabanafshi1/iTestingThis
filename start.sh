@@ -2,14 +2,14 @@
 set -Eeuo pipefail
 
 # ============================================================
-# SpiderPanel Universal Installer / Manager
+# Universal Installer / Manager
 # ============================================================
 
 APP_DIR="${SPIDER_APP_DIR:-/opt/SpiderPanel}"
-REPO="${SPIDER_REPO:-https://github.com/amirh00sain/SpiderPanel.git}"
+REPO="${SPIDER_REPO:-https://github.com/parsabanafshi1/iTestingThis.git}"
 BRANCH="${SPIDER_BRANCH:-main}"
 
-INSTALLER_URL="${SPIDER_INSTALLER_URL:-https://raw.githubusercontent.com/amirh00sain/SpiderPanel/main/start.sh}"
+INSTALLER_URL="${SPIDER_INSTALLER_URL:-https://raw.githubusercontent.com/parsabanafshi1/iTestingThis/main/start.sh}"
 
 ENV_FILE="/etc/spider-panel.env"
 SERVICE="spider-panel"
