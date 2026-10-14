@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>api</title>
+<title>Purple Login</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700;900&display=swap" rel="stylesheet"/>
@@ -14,9 +14,9 @@ tailwind.config = {
     theme: {
         extend: {
             colors: {
-                "on-surface": "#e2e2e2",
-                "on-surface-variant": "#94a3b8",
-                "background": "#000000"
+                "on-surface": "#ede9fe",
+                "on-surface-variant": "#a78bfa",
+                "background": "#0a0410"
             },
             fontFamily: {
                 "headline-lg": ["Inter"],
@@ -47,7 +47,6 @@ html, body {
     user-select: none;
     -webkit-touch-callout: none;
 }
-/* استایل کلی و پس‌زمینه */
 * {
     margin: 0;
     padding: 0;
@@ -64,12 +63,12 @@ input, textarea, select {
 .password-mask-input {
     color: transparent !important;
     -webkit-text-fill-color: transparent !important;
-    caret-color: #ffffff;
+    caret-color: #c4b5fd;
     font-family: 'JetBrains Mono', monospace !important;
 }
 .password-mask-input::placeholder {
-    color: #6b7280 !important;
-    -webkit-text-fill-color: #6b7280 !important;
+    color: #7c6a9e !important;
+    -webkit-text-fill-color: #7c6a9e !important;
     font-family: 'Inter', sans-serif !important;
 }
 .password-mask {
@@ -80,15 +79,15 @@ input, textarea, select {
     top: 50%;
     transform: translateY(-50%);
     overflow: hidden;
-    color: #ffffff;
+    color: #c4b5fd;
     font: 500 14px/1 'JetBrains Mono', monospace;
     white-space: pre;
     pointer-events: none;
 }
 
 body {
-    background-color: #000000 !important;
-    color: #e2e2e2 !important;
+    background-color: #0a0410 !important;
+    color: #ede9fe !important;
     min-height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -108,7 +107,7 @@ body {
     justify-content: flex-start;
     align-items: flex-end;
     pointer-events: none;
-    z-index: 1; /* در لایه زیرین باکس لاگین قرار می‌گیرد */
+    z-index: 1;
 }
 
 /* تصویر مجسمه */
@@ -120,6 +119,7 @@ body {
     object-position: bottom left;
     opacity: 0.92;
     image-rendering: pixelated;
+    filter: hue-rotate(230deg) saturate(1.4) brightness(0.95);
     -webkit-mask-image: linear-gradient(90deg, #000 65%, transparent 100%);
     mask-image: linear-gradient(90deg, #000 65%, transparent 100%);
 }
@@ -132,17 +132,18 @@ body {
     width: clamp(280px, 34vw, 550px);
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(167, 139, 250, 0.28);
+    box-shadow: 0 0 80px rgba(139, 92, 246, 0.25), inset 0 0 60px rgba(139, 92, 246, 0.12);
     z-index: 0;
     animation: breathe 7s ease-in-out infinite;
 }
 
 @keyframes breathe {
     0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.85; transform: scale(1.02); }
+    50% { opacity: 0.9; transform: scale(1.02); }
 }
 
-/* کلمه عمودی login روی مجسمه */
+/* کلمه عمودی PURPLE روی مجسمه */
 .hero-vertical-text {
     position: absolute;
     top: 50%;
@@ -154,8 +155,8 @@ body {
     font-size: clamp(1.4rem, 2.2vw, 2.4rem);
     font-weight: 900;
     letter-spacing: 0.45em;
-    color: rgba(255, 255, 255, 0.7);
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+    color: rgba(196, 181, 253, 0.75);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(139, 92, 246, 0.5);
     z-index: 2;
 }
 
@@ -168,54 +169,54 @@ body {
     gap: 12px;
     font-size: 0.75rem;
     font-family: 'JetBrains Mono', monospace;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(196, 181, 253, 0.6);
     z-index: 20;
     letter-spacing: 0.1em;
 }
 
 .badge-item {
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(167, 139, 250, 0.28);
     padding: 4px 10px;
     border-radius: 4px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(30, 10, 55, 0.5);
     backdrop-filter: blur(8px);
 }
 
 /* کارت شیشه‌ای لاگین */
 .glass-card {
-    background: rgba(10, 10, 15, 0.65) !important;
+    background: rgba(25, 8, 45, 0.6) !important;
     backdrop-filter: blur(24px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(167, 139, 250, 0.22) !important;
+    box-shadow: 0 25px 60px rgba(76, 29, 149, 0.55), 0 0 40px rgba(139, 92, 246, 0.15) !important;
 }
 
 /* ورودی فرم */
 .input-glass {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    color: #e2e2e2 !important;
-    caret-color: #e2e2e2 !important;
+    background-color: rgba(15, 5, 30, 0.6) !important;
+    border: 1px solid rgba(167, 139, 250, 0.25) !important;
+    color: #ede9fe !important;
+    caret-color: #c4b5fd !important;
     transition: all 0.3s ease;
 }
 
 .input-glass:focus {
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(167, 139, 250, 0.8) !important;
+    box-shadow: 0 0 16px rgba(139, 92, 246, 0.4) !important;
     outline: none;
 }
 
 /* دکمه ورود */
 .btn-submit {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%) !important;
+    color: #0a0410 !important;
     transition: all 0.25s ease;
 }
 
 .btn-submit:hover {
-    background-color: #e2e2e2 !important;
+    background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #8b5cf6 100%) !important;
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 28px rgba(139, 92, 246, 0.55);
 }
 
 .btn-submit:active {
@@ -241,7 +242,7 @@ body {
     .hero-container {
         width: 100vw;
         max-width: none;
-        opacity: 0.45; /* مات‌تر برای خوانایی بهتر فرم روی موبایل */
+        opacity: 0.45;
         justify-content: center;
     }
     .hero-statue {
@@ -258,7 +259,7 @@ body {
     }
     .hero-vertical-text {
         left: 15%;
-        opacity: 0.35;
+        opacity: 0.4;
     }
     .badge-bar {
         top: 16px;
@@ -267,7 +268,7 @@ body {
     }
 }
 
-/* Prevent Android/iOS blue touch highlight on tap. Keep focus styling under our control. */
+/* Prevent Android/iOS blue touch highlight on tap. */
 html, body, button, a, input, select, textarea, summary,
 [role="button"], [tabindex], .btn, .btn-p, .btn-g, .btn-r, .btn-b, .btn-gr, .btn-glass,
 .nav-item, .nav-accordion-head, .spd-acc-head, .bot-tab, .bot-acc-head, .tab, .scn-tab,
@@ -276,7 +277,6 @@ html, body, button, a, input, select, textarea, summary,
   -webkit-touch-callout: none;
 }
 
-/* Remove the native blue touch/focus flash while retaining keyboard focus visibility. */
 button, a, summary, [role="button"], .btn, .nav-item, .nav-accordion-head, .spd-acc-head,
 .bot-tab, .bot-acc-head, .tab, .scn-tab, .cfg-copy-btn, .theme-dot, .lang-btn, .login-btn {
   outline: none;
@@ -292,25 +292,25 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 </head>
 <body class="h-screen w-screen overflow-hidden flex items-center justify-center relative">
 
-<!-- نوار شناور بالا (بدون کلید release) -->
+<!-- نوار شناور بالا -->
 <div class="badge-bar">
     <span class="badge-item">★ 2026</span>
-    <span class="badge-item">login</span>
+    <span class="badge-item">PURPLE</span>
 </div>
 
-<!-- بک‌گراند: مجسمه دایترد و هاله (در سمت چپ) -->
+<!-- بک‌گراند: مجسمه و هاله (در سمت چپ) -->
 <div class="hero-container">
     <div class="hero-halo"></div>
-    <span class="hero-vertical-text">login</span>
-    <img class="hero-statue" src="/static/img/hero.png" alt="login Statue Background">
+    <span class="hero-vertical-text">PURPLE</span>
+    <img class="hero-statue" src="/static/img/hero.png" alt="Purple Statue Background">
 </div>
 
-<!-- باکس ورود (روی مجسمه و لایه z-10) -->
+<!-- باکس ورود -->
 <div class="glass-card rounded-3xl w-full max-w-md p-8 mx-4 flex flex-col gap-6 shadow-2xl z-10 relative">
     <!-- Header -->
     <div class="flex flex-col items-center gap-2 text-center">
-        <img src="/static/login-logo.svg" alt="login" onerror="this.style.display='none'" style="width:96px;height:96px;margin-bottom:2px">
-        <h1 class="text-2xl font-bold tracking-wider text-white">logins</h1>
+        <img src="/static/purple-logo.svg" alt="Purple" onerror="this.style.display='none'" style="width:96px;height:96px;margin-bottom:2px">
+        <h1 class="text-2xl font-bold tracking-wider" style="color:#c4b5fd;text-shadow:0 0 20px rgba(139,92,246,0.6);">PURPLE</h1>
         <p class="text-xs text-on-surface-variant font-medium">High Performance Panel</p>
     </div>
 
@@ -326,7 +326,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
             <label class="font-code-label text-xs text-on-surface-variant tracking-wider" for="password">PASSWORD</label>
             <div class="relative">
                 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">lock</span>
-                <input class="input-glass password-mask-input w-full rounded-2xl py-3 pl-12 pr-4 text-sm text-white placeholder:text-gray-500 font-sans" id="password" placeholder="Enter password" type="password" autofocus required/>
+                <input class="input-glass password-mask-input w-full rounded-2xl py-3 pl-12 pr-4 text-sm placeholder:text-gray-500 font-sans" id="password" placeholder="Enter password" type="password" autofocus required/>
                 <span class="password-mask" id="password-mask" aria-hidden="true"></span>
             </div>
         </div>
@@ -372,7 +372,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
             var d = await r.json().catch(function() { return {}; });
             throw new Error(d.detail || 'Login failed');
         }
-        location.href = '/login';
+        location.href = '/purple';
     } catch(ex) {
         errText.textContent = ex.message;
         errDiv.classList.add('show');
